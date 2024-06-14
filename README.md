@@ -12,6 +12,8 @@
 #circle_array.cpp
 array.h의 구현 파일입니다.
 
+**app2~app5는 사용 용례입니다.
+
 #app2.cpp
 게임 1회 실행시 array.h 헤더 사용 예시입니다.
 
@@ -20,6 +22,9 @@ array.h의 구현 파일입니다.
 
 #app4.cpp
 야추 다이스 반복 용례입니다.
+
+#app5.cpp
+야추 다이스와 틀린숫자찾기 선택 반복 용례
 
 #circle_Y.cpp 
 야추 다이스 구현 파일입니다.
