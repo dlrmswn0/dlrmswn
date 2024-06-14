@@ -1,6 +1,6 @@
 #include "Array.h"
 
-Array::Array(int n) :n(n), loser(n) // loser ¹è¿­Àº »ı¼ºÀÚ¸¦ ÅëÇØ n°³ÀÇ ÀÎµ¦½º¸¦ °¡Áö¸ç ¸ğµÎ 0À¸·Î ÃÊ±âÈ­µÊ.
+Array::Array(int n) :n(n), loser(n) // loser ë°°ì—´ì€ ìƒì„±ìë¥¼ í†µí•´ nê°œì˜ ì¸ë±ìŠ¤ë¥¼ ê°€ì§€ë©° ëª¨ë‘ 0ìœ¼ë¡œ ì´ˆê¸°í™”ë¨.
 {
 
 }
@@ -8,13 +8,13 @@ Array::Array(int n) :n(n), loser(n) // loser ¹è¿­Àº »ı¼ºÀÚ¸¦ ÅëÇØ n°³ÀÇ ÀÎµ¦½º¸¦
 
 void Array::Count(int m)
 {
-	loser[m]++; // ÀÔ·Â¹ŞÀº int Çü º¯¼ö m¹øÂ° loser ¹è¿­ ÀÎµ¦½º¸¦ 1 ´õÇÔ . ÆĞ¹è Ä«¿îÆÃ
+	loser[m]++; // ì…ë ¥ë°›ì€ int í˜• ë³€ìˆ˜ më²ˆì§¸ loser ë°°ì—´ ì¸ë±ìŠ¤ë¥¼ 1 ë”í•¨ . íŒ¨ë°° ì¹´ìš´íŒ…
 } 
 
 void Array::PrintArray()
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 1; i < n; i++)
 	{
 		cout << loser[i];
 	}
-} // loser ¹è¿­ Ãâ·Â
+} // loser ë°°ì—´ ì¶œë ¥
