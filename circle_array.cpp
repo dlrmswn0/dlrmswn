@@ -43,5 +43,6 @@ void Array::Calculate()
 
 void Array::Nbbang()
 {
-	cout <<endl<< "n빵 금액:" << money / (n-1) << "원 입니다.";
-}
+	cout <<endl<< "n빵 금액:" << money / (n-1) << "원 입니다."; 
+	//app에서 객체를 n+1로 생성하기 때문에 n-1로 나눠야 올바른 값이 출력된다.
+ }
