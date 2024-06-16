@@ -16,7 +16,7 @@ void Array::PrintArray()
 {
 	for (int i = 1; i < n; i++)
 	{
-		cout << loser[i];
+		cout << loser[i] << " ";
 	}
 } // loser 배열 출력
 
@@ -43,5 +43,5 @@ void Array::Calculate()
 
 void Array::Nbbang()
 {
-	cout <<endl<< "n빵 금액:" << money / n << "원 입니다.";
+	cout <<endl<< "n빵 금액:" << money / (n-1) << "원 입니다.";
 }
