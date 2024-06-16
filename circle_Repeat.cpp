@@ -1,7 +1,7 @@
 #include "Repeat.h"
 
 Repeat::Repeat(int n,int r):
-	Array(n+1,r),Game(n),H(n),tictactoe(),YahtzeeGame(n)
+	Array(n+1,r),WNum(n),H(n),tictactoe(),YahtzeeGame(n)
 {
 
 }
@@ -44,14 +44,21 @@ void Repeat::if_two()
 	
 	for (int i = 0; i < r; i++)
 	{
-		Game::play();
-		Array::Count(Game::getSlowestRun());
+		WNum::play();
+		cout << endl;
+		Array::Count(WNum::getloser());
 	}
+
+	cout << "패배 횟수" << endl;
+
+	Array::PrintArray();
+	cout << endl;
+
 	Array::Calculate();
 	
 }
 
-void Repeat::all()
+void Repeat::Else()
 {
 	cout << "두 명 이상의 플레이어, 틱택토 게임은 플레이 제한됩니다.." << endl
 		<< "게임 리스트 : 야추 다이스, 지능 테스트, 틀린숫자찾기" << endl;
@@ -81,8 +88,8 @@ void Repeat::all()
 
 	for (int i = 0; i < r; i++)
 	{
-		Game::play();
-		Array::Count(Game::getSlowestRun());
+		WNum::play();
+		Array::Count(WNum::getloser());
 	}
 	Array::Calculate();
 
