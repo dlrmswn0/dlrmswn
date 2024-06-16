@@ -1,4 +1,4 @@
-//1È¸ ½ÇÇà
+//1ÃˆÂ¸ Â½Ã‡Ã‡Ã 
 #include "Game.h"
 #include "Array.h"
 #include <ctime>
