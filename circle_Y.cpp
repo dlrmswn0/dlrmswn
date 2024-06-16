@@ -14,25 +14,24 @@ YahtzeeGame::YahtzeeGame(int n) :n(n), dice(NUM_DICE), rollCount(0), l(0) {
 }
 
 int YahtzeeGame::getloser() {
-    return l+1;//******appì—ì„œ 0ë²ˆì§¸ ë°°ì—´ì€ ë°°ì œí•´ì„œ 1ì„ ë”í–ˆìŠµë‹ˆë‹¤!!!!!
+    return l+1; //******app3¿¡¼­ 0¹øÂ° ¹è¿­Àº ¹èÁ¦ÇØ¼­ 1À» ´õÇß½À´Ï´Ù!!!!!
 }
 
 void YahtzeeGame::initializeGame() {
-    cout << "Welcome to ì•¼ì¶”!!" << endl;
-    cout << "ê²Œì„ì˜ ë£°ì€ ê°„ë‹¨í•©ë‹ˆë‹¤! " << endl;
-    cout << "í•œí„´ì— ì£¼ì‚¬ìœ„ë¥¼ ì´ 5ê°œë¥¼ êµ´ë¦¬ëŠ”ë° ì ìˆ˜ëŠ” ì£¼ì‚¬ìœ„ 5ê°œì˜ ëˆˆì˜ ì´í•©ì…ë‹ˆë‹¤. (ì˜ˆ :  5 4 3 2 1 = 15ì )" << endl;
-    cout << "ì£¼ì‚¬ìœ„ì˜ ëˆˆì´ ë§ˆìŒì— ì•ˆë“ ë‹¤ë©´ ë‹¤ì‹œ êµ´ë¦´ ê¸°íšŒë¥¼ ì£¼ëŠ”ë° í•œ ë¼ìš´ë“œë‹¹ 2ë²ˆ ì£¼ì–´ì§‘ë‹ˆë‹¤.  " << endl;
-    cout << "ì£¼ì‚¬ìœ„ë¥¼ ë‹¤ì‹œ êµ´ë¦¬ëŠ” ë°©ë²•ì€ ë‹¤ì‹œ êµ´ë¦¬ê³  ì‹¶ì§€ ì•Šì€ ì£¼ì‚¬ìœ„ì˜ ìœ„ì¹˜ë¥¼ ì…ë ¥í•´ì£¼ì‹œë©´ ë©ë‹ˆë‹¤.  " << endl;
-    cout << "(ì˜ˆ : 5 5 1 2 3 ì¼ë•Œ 1 3 ì„ ì…ë ¥í•œë‹¤ë©´ ì²«ë²ˆì§¸ ì£¼ì‚¬ìœ„ ëˆˆì¸ 5ì™€ ì„¸ë²ˆÂŠ ì£¼ì‚¬ìœ„ ëˆˆì¸ 1ì„ ì œì™¸í•˜ê³  ë‚˜ë¨¸ì§€ ì£¼ì‚¬ìœ„ë“¤ì´ ë‹¤ì‹œ ëŒë ¤ì§‘ë‹ˆë‹¤.)" << endl;
-    cout << "íŠ¹ì • ì¡°ê±´ì„ ë§Œì¡±í•˜ë©´ ë³´ë„ˆìŠ¤ ì ìˆ˜ë¥¼ ë°›ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.(ì˜ˆ : 5ê°œì˜ ì£¼ì‚¬ìœ„ ì¤‘ ê°™ì€ ëˆˆì˜ ìˆ«ìê°€ 4ê°œ)" << endl;
-    cout << "ì´ 3ë¼ìš´ë“œì˜ ì ìˆ˜ë¥¼ í•©ì‚°í•´ì„œ ë” ë†’ì€ ì ìˆ˜ë¥¼ ë°›ì€ í”Œë ˆì´ì–´ê°€ ìŠ¹ë¦¬í•©ë‹ˆë‹¤! " << endl;
-    cout << "ì°¸ì—¬í•  í”Œë ˆì´ì–´ì˜ ì¸ì› ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ";
+    cout << "Welcome to ¾ßÃß!!" << endl;
+    cout << "°ÔÀÓÀÇ ·êÀº °£´ÜÇÕ´Ï´Ù! " << endl;
+    cout << "ÇÑÅÏ¿¡ ÁÖ»çÀ§¸¦ ÃÑ 5°³¸¦ ±¼¸®´Âµ¥ Á¡¼ö´Â ÁÖ»çÀ§ 5°³ÀÇ ´«ÀÇ ÃÑÇÕÀÔ´Ï´Ù. (¿¹ :  5 4 3 2 1 = 15Á¡)" << endl;
+    cout << "ÁÖ»çÀ§ÀÇ ´«ÀÌ ¸¶À½¿¡ ¾Èµç´Ù¸é ´Ù½Ã ±¼¸± ±âÈ¸¸¦ ÁÖ´Âµ¥ ÇÑ ¶ó¿îµå´ç 2¹ø ÁÖ¾îÁı´Ï´Ù.  " << endl;
+    cout << "ÁÖ»çÀ§¸¦ ´Ù½Ã ±¼¸®´Â ¹æ¹ıÀº ´Ù½Ã ±¼¸®°í ½ÍÁö ¾ÊÀº ÁÖ»çÀ§ÀÇ À§Ä¡¸¦ ÀÔ·ÂÇØÁÖ½Ã¸é µË´Ï´Ù.  " << endl;
+    cout << "(¿¹ : 5 5 1 2 3 ÀÏ¶§ 1 3 À» ÀÔ·ÂÇÑ´Ù¸é Ã¹¹øÂ° ÁÖ»çÀ§ ´«ÀÎ 5¿Í ¼¼¹ø¤Š ÁÖ»çÀ§ ´«ÀÎ 1À» Á¦¿ÜÇÏ°í ³ª¸ÓÁö ÁÖ»çÀ§µéÀÌ ´Ù½Ã µ¹·ÁÁı´Ï´Ù.)" << endl;
+    cout << "Æ¯Á¤ Á¶°ÇÀ» ¸¸Á·ÇÏ¸é º¸³Ê½º Á¡¼ö¸¦ ¹ŞÀ» ¼ö ÀÖ½À´Ï´Ù.(¿¹ : 5°³ÀÇ ÁÖ»çÀ§ Áß °°Àº ´«ÀÇ ¼ıÀÚ°¡ 4°³)" << endl;
+    cout << "ÃÑ 3¶ó¿îµåÀÇ Á¡¼ö¸¦ ÇÕ»êÇØ¼­ ´õ ³ôÀº Á¡¼ö¸¦ ¹ŞÀº ÇÃ·¹ÀÌ¾î°¡ ½Â¸®ÇÕ´Ï´Ù! " << endl;
+    cout << "Âü¿©ÇÒ ÇÃ·¹ÀÌ¾îÀÇ ÀÎ¿ø ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
     players.resize(n);
     scores.resize(n, 0);
 
     for (int i = 0; i < n; ++i) {
-        cout << "í”Œë ˆì´ì–´ " << (i + 1) << "ì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”: ";
-        cin >> players[i];
+        players[i] = "Player " + to_string(i + 1);
     }
 }
 
@@ -68,27 +67,27 @@ int YahtzeeGame::bonusPoints() {
         counts[dice[i] - 1]++;
     }
 
-    // All Same: ëª¨ë“  ì£¼ì‚¬ìœ„ ëˆˆì´ ê°™ì„ ë•Œ
+    // All Same: ¸ğµç ÁÖ»çÀ§ ´«ÀÌ °°À» ¶§
     if (*max_element(counts.begin(), counts.end()) == 5) {
-        cout << "ë³´ë„ˆìŠ¤ ì ìˆ˜ 60ì ì„ íšë“í–ˆìŠµë‹ˆë‹¤! (All Same)" << endl;
+        cout << "º¸³Ê½º Á¡¼ö 60Á¡À» È¹µæÇß½À´Ï´Ù! (All Same)" << endl;
         return 60;
     }
 
-    // Full House: 3ê°œì™€ 2ê°œê°€ ê°™ì€ ëˆˆì¼ ë•Œ
+    // Full House: 3°³¿Í 2°³°¡ °°Àº ´«ÀÏ ¶§
     if (find(counts.begin(), counts.end(), 3) != counts.end() && find(counts.begin(), counts.end(), 2) != counts.end()) {
-        cout << "ë³´ë„ˆìŠ¤ ì ìˆ˜ 30ì ì„ íšë“í–ˆìŠµë‹ˆë‹¤! (Full House)" << endl;
+        cout << "º¸³Ê½º Á¡¼ö 30Á¡À» È¹µæÇß½À´Ï´Ù! (Full House)" << endl;
         return 30;
     }
 
-    // Four of a Kind: ì£¼ì‚¬ìœ„ ëˆˆì´ 4ê°œ ê°™ì€ ê²½ìš° (ë³´ë„ˆìŠ¤ ì ìˆ˜ 30ì )
+    // Four of a Kind: ÁÖ»çÀ§ ´«ÀÌ 4°³ °°Àº °æ¿ì (º¸³Ê½º Á¡¼ö 30Á¡)
     if (*max_element(counts.begin(), counts.end()) >= 4) {
-        cout << "ë³´ë„ˆìŠ¤ ì ìˆ˜ 30ì ì„ íšë“í–ˆìŠµë‹ˆë‹¤! (Four of a Kind)" << endl;
+        cout << "º¸³Ê½º Á¡¼ö 30Á¡À» È¹µæÇß½À´Ï´Ù! (Four of a Kind)" << endl;
         return 30;
     }
 
-    // Three of a Kind: ì£¼ì‚¬ìœ„ ëˆˆì´ 3ê°œ ê°™ì€ ê²½ìš° (ë³´ë„ˆìŠ¤ ì ìˆ˜ 15ì )
+    // Three of a Kind: ÁÖ»çÀ§ ´«ÀÌ 3°³ °°Àº °æ¿ì (º¸³Ê½º Á¡¼ö 15Á¡)
     if (*max_element(counts.begin(), counts.end()) >= 3) {
-        cout << "ë³´ë„ˆìŠ¤ ì ìˆ˜ 15ì ì„ íšë“í–ˆìŠµë‹ˆë‹¤! (Three of a Kind)" << endl;
+        cout << "º¸³Ê½º Á¡¼ö 15Á¡À» È¹µæÇß½À´Ï´Ù! (Three of a Kind)" << endl;
         return 15;
     }
 
@@ -108,20 +107,20 @@ void YahtzeeGame::playRound(int playerIndex) {
         }
         rollCount++;
 
-        cout << "ì£¼ì‚¬ìœ„ë¥¼ êµ´ë ¸ìŠµë‹ˆë‹¤: ";
+        cout << "ÁÖ»çÀ§¸¦ ±¼·È½À´Ï´Ù: ";
         printDice();
 
         if (rollCount < 3) {
             string choice;
             while (true) {
-                cout << "ì£¼ì‚¬ìœ„ë¥¼ ë‹¤ì‹œ êµ´ë¦¬ì‹œê² ìŠµë‹ˆê¹Œ? (y/n): ";
+                cout << "ÁÖ»çÀ§¸¦ ´Ù½Ã ±¼¸®½Ã°Ú½À´Ï±î? (y/n): ";
                 cin >> choice;
 
                 if (choice == "y" || choice == "n") {
                     break;
                 }
                 else {
-                    cout << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. 'y' ë˜ëŠ” 'n'ì„ ì…ë ¥í•˜ì„¸ìš”." << endl;
+                    cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. 'y' ¶Ç´Â 'n'À» ÀÔ·ÂÇÏ¼¼¿ä." << endl;
                 }
             }
 
@@ -129,7 +128,7 @@ void YahtzeeGame::playRound(int playerIndex) {
                 break;
             }
 
-            cout << "ë‹¤ì‹œ êµ´ë¦¬ì§€ ì•Šì„ ì£¼ì‚¬ìœ„ì˜ ìœ„ì¹˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” (ì˜ˆ: 1 2 4): ";
+            cout << "´Ù½Ã ±¼¸®Áö ¾ÊÀ» ÁÖ»çÀ§ÀÇ À§Ä¡¸¦ ÀÔ·ÂÇÏ¼¼¿ä (¿¹: 1 2 4): ";
             string input;
             cin.ignore();
             getline(cin, input);
@@ -145,29 +144,29 @@ void YahtzeeGame::playRound(int playerIndex) {
     }
 
     int score = calculateScore();
-    cout << players[playerIndex] << "ì˜ ì´ í„´ì˜ ì ìˆ˜: " << score << endl;
+    cout << players[playerIndex] << "ÀÇ ÀÌ ÅÏÀÇ Á¡¼ö: " << score << endl;
     scores[playerIndex] += score;
 }
 
 void YahtzeeGame::printScores() const {
     for (size_t i = 0; i < players.size(); ++i) {
-        cout << players[i] << "ì˜ í˜„ì¬ ì ìˆ˜: " << scores[i] << endl;
+        cout << players[i] << "ÀÇ ÇöÀç Á¡¼ö: " << scores[i] << endl;
     }
 }
 
 void YahtzeeGame::playGame() {
     for (int round = 1; round <= NUM_ROUNDS; ++round) {
         for (size_t i = 0; i < players.size(); ++i) {
-            cout << "ë¼ìš´ë“œ " << round << " - " << players[i] << "ì˜ ì°¨ë¡€ì…ë‹ˆë‹¤." << endl;
+            cout << "¶ó¿îµå " << round << " - " << players[i] << "ÀÇ Â÷·ÊÀÔ´Ï´Ù." << endl;
             playRound(i);
             printScores();
         }
     }
 
-    cout << "ìµœì¢… ì ìˆ˜" << endl;
+    cout << "ÃÖÁ¾ Á¡¼ö" << endl;
     printScores();
 
-    // ìŠ¹ì íŒë³„
+    // ½ÂÀÚ ÆÇº°
     int maxScore = *max_element(scores.begin(), scores.end());
     int minScore = *min_element(scores.begin(), scores.end());
     string winner;
@@ -183,6 +182,6 @@ void YahtzeeGame::playGame() {
         }
     }
 
-    cout << winner << "ê°€ ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤!" << endl;
-    cout << loser << "ê°€ íŒ¨ë°°í–ˆìŠµë‹ˆë‹¤." << endl;
+    cout << winner << "°¡ ½Â¸®Çß½À´Ï´Ù!" << endl;
+    cout << loser << "°¡ ÆĞ¹èÇß½À´Ï´Ù." << endl;
 }
