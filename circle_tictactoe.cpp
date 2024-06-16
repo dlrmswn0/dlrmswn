@@ -1,7 +1,7 @@
 // tictactoe.cpp
 #include "Tictactoe.h"
 
-// »ı¼ºÀÚ: °ÔÀÓÀ» ÃÊ±âÈ­
+// ìƒì„±ì: ê²Œì„ì„ ì´ˆê¸°í™”
 tictactoe::tictactoe() : loser(0)
 {
     resetboard();
@@ -12,104 +12,104 @@ int tictactoe::getloses()
     return loser;
 }
 
-// º¸µå¸¦ ÃÊ±â »óÅÂ·Î ¸®¼ÂÇÏ´Â ÇÔ¼ö
+// ë³´ë“œë¥¼ ì´ˆê¸° ìƒíƒœë¡œ ë¦¬ì…‹í•˜ëŠ” í•¨ìˆ˜
 void tictactoe::resetboard() {
     int k = 1;
-    // º¸µåÀÇ °¢ À§Ä¡¿¡ 1ºÎÅÍ 9±îÁö ¼ıÀÚ ÇÒ´ç
+    // ë³´ë“œì˜ ê° ìœ„ì¹˜ì— 1ë¶€í„° 9ê¹Œì§€ ìˆ«ì í• ë‹¹
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            board[i][j] = '0' + k++; // Á¤¼ö¸¦ ¹®ÀÚ·Î º¯È¯
+            board[i][j] = '0' + k++; // ì •ìˆ˜ë¥¼ ë¬¸ìë¡œ ë³€í™˜
         }
     }
 }
 
-// ÇöÀç º¸µå »óÅÂ¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+// í˜„ì¬ ë³´ë“œ ìƒíƒœë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 void tictactoe::displayboard() {
     cout << "player 1 [x]  player 2 [o]\n\n";
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            cout << "  " << board[i][j]; // °¢ º¸µå Ä­À» Ãâ·Â
-            if (j < 2) cout << "  |";  // ¿­ »çÀÌÀÇ ±¸ºĞ¼± Ãâ·Â
+            cout << "  " << board[i][j]; // ê° ë³´ë“œ ì¹¸ì„ ì¶œë ¥
+            if (j < 2) cout << "  |";  // ì—´ ì‚¬ì´ì˜ êµ¬ë¶„ì„  ì¶œë ¥
         }
         cout << endl;
-        if (i < 2) cout << "_____|_____|_____\n"; // Çà »çÀÌÀÇ ±¸ºĞ¼± Ãâ·Â
+        if (i < 2) cout << "_____|_____|_____\n"; // í–‰ ì‚¬ì´ì˜ êµ¬ë¶„ì„  ì¶œë ¥
     }
     cout << endl;
 }
 
-// °ÔÀÓÀ» ÁøÇàÇÏ´Â ¸ŞÀÎ ÇÔ¼ö
+// ê²Œì„ì„ ì§„í–‰í•˜ëŠ” ë©”ì¸ í•¨ìˆ˜
 void tictactoe::play() {
-    char turn = 'x'; // ÇöÀç Â÷·Ê¸¦ ³ªÅ¸³»´Â º¯¼ö ('x' ¶Ç´Â 'o')
-    int number; // ¼±ÅÃÇÑ Ä­ÀÇ ¹øÈ£¸¦ ÀúÀåÇÒ º¯¼ö
-    bool draw; // °ÔÀÓ °è¼Ó ¿©ºÎ¸¦ È®ÀÎÇÏ´Â º¯¼ö
+    char turn = 'x'; // í˜„ì¬ ì°¨ë¡€ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë³€ìˆ˜ ('x' ë˜ëŠ” 'o')
+    int number; // ì„ íƒí•œ ì¹¸ì˜ ë²ˆí˜¸ë¥¼ ì €ì¥í•  ë³€ìˆ˜
+    bool draw; // ê²Œì„ ê³„ì† ì—¬ë¶€ë¥¼ í™•ì¸í•˜ëŠ” ë³€ìˆ˜
 
     
-        draw = true; // Ã³À½¿£ °ÔÀÓÀ» °è¼ÓÇÑ´Ù°í °¡Á¤
-        resetboard(); // °ÔÀÓ ½ÃÀÛ ½Ã º¸µå¸¦ ÃÊ±âÈ­
+        draw = true; // ì²˜ìŒì—” ê²Œì„ì„ ê³„ì†í•œë‹¤ê³  ê°€ì •
+        resetboard(); // ê²Œì„ ì‹œì‘ ì‹œ ë³´ë“œë¥¼ ì´ˆê¸°í™”
         while (true) {
-            displayboard(); // º¸µå¸¦ È­¸é¿¡ Ãâ·Â
+            displayboard(); // ë³´ë“œë¥¼ í™”ë©´ì— ì¶œë ¥
             cout << "player " << (turn == 'x' ? '1' : '2') << " [" << turn << "] turn: ";
-            cin >> number; // Ä­ ¹øÈ£¸¦ ÀÔ·Â¹ŞÀ½
+            cin >> number; // ì¹¸ ë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ìŒ
 
-            // ÀÔ·ÂÀÌ À¯È¿ÇÑÁö È®ÀÎ
+            // ì…ë ¥ì´ ìœ íš¨í•œì§€ í™•ì¸
             if (number < 1 || number > 9) {
                 cout << "invalid move, try again.\n";
                 continue;
             }
 
-            number--; // 0ºÎÅÍ ½ÃÀÛÇÏ´Â ÀÎµ¦½º·Î º¯È¯
-            int row = number / 3; // Çà ÀÎµ¦½º °è»ê
-            int col = number % 3; // ¿­ ÀÎµ¦½º °è»ê
+            number--; // 0ë¶€í„° ì‹œì‘í•˜ëŠ” ì¸ë±ìŠ¤ë¡œ ë³€í™˜
+            int row = number / 3; // í–‰ ì¸ë±ìŠ¤ ê³„ì‚°
+            int col = number % 3; // ì—´ ì¸ë±ìŠ¤ ê³„ì‚°
 
-            // ¼±ÅÃÇÑ Ä­ÀÌ ÀÌ¹Ì Â÷ÀÖÀ¸¸é
+            // ì„ íƒí•œ ì¹¸ì´ ì´ë¯¸ ì°¨ìˆìœ¼ë©´
             if (board[row][col] == 'x' || board[row][col] == 'o') {
                 cout << "invalid move, try again.\n";
                 continue;
             }
 
-            board[row][col] = turn; // ÇöÀç ÇÃ·¹ÀÌ¾îÀÇ ±âÈ£·Î º¸µå¿¡ Ç¥½Ã
-            if (checkwin(turn)) { // ÇöÀç ÇÃ·¹ÀÌ¾î°¡ ½Â¸®Çß´ÂÁö È®ÀÎ
+            board[row][col] = turn; // í˜„ì¬ í”Œë ˆì´ì–´ì˜ ê¸°í˜¸ë¡œ ë³´ë“œì— í‘œì‹œ
+            if (checkwin(turn)) { // í˜„ì¬ í”Œë ˆì´ì–´ê°€ ìŠ¹ë¦¬í–ˆëŠ”ì§€ í™•ì¸
                 displayboard();
                 cout << "player " << (turn == 'x' ? '1' : '2') << " [" << turn << "] wins!\n";
-                if (turn == 'x') loser=2; // ÇÃ·¹ÀÌ¾î 1ÀÇ ½Â¸® È½¼ö Áõ°¡
-                else loser=1; // ÇÃ·¹ÀÌ¾î 2ÀÇ ½Â¸® È½¼ö Áõ°¡
+                if (turn == 'x') loser=2; // í”Œë ˆì´ì–´ 1ì˜ ìŠ¹ë¦¬ íšŸìˆ˜ ì¦ê°€
+                else loser=1; // í”Œë ˆì´ì–´ 2ì˜ ìŠ¹ë¦¬ íšŸìˆ˜ ì¦ê°€
                 break;
             }
 
-            if (checkdraw()) { // ¹«½ÂºÎÀÎÁö È®ÀÎ
+            if (checkdraw()) { // ë¬´ìŠ¹ë¶€ì¸ì§€ í™•ì¸
                 displayboard();
                 cout << "it's a draw!\n";
                 break;
             }
 
-            // Â÷·Ê º¯°æ
+            // ì°¨ë¡€ ë³€ê²½
             turn = (turn == 'x') ? 'o' : 'x';
         }
 
         
 }
 
-// ÇöÀç ÇÃ·¹ÀÌ¾î°¡ ½Â¸®Çß´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+// í˜„ì¬ í”Œë ˆì´ì–´ê°€ ìŠ¹ë¦¬í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 bool tictactoe::checkwin(char player) {
-    // Çà°ú ¿­À» È®ÀÎ
+    // í–‰ê³¼ ì—´ì„ í™•ì¸
     for (int i = 0; i < 3; i++) {
         if (board[i][0] == player && board[i][1] == player && board[i][2] == player) return true;
         if (board[0][i] == player && board[1][i] == player && board[2][i] == player) return true;
     }
-    // ´ë°¢¼±À» È®ÀÎ
+    // ëŒ€ê°ì„ ì„ í™•ì¸
     if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true;
     if (board[0][2] == player && board[1][1] == player && board[2][0] == player) return true;
     return false;
 }
 
-// °ÔÀÓÀÌ ¹«½ÂºÎÀÎÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+// ê²Œì„ì´ ë¬´ìŠ¹ë¶€ì¸ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 bool tictactoe::checkdraw() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             if (board[i][j] != 'x' && board[i][j] != 'o')
-                return false; // ºñ¾î ÀÖ´Â Ä­ÀÌ ÀÖÀ¸¸é ¹«½ÂºÎ°¡ ¾Æ´Ô
+                return false; // ë¹„ì–´ ìˆëŠ” ì¹¸ì´ ìˆìœ¼ë©´ ë¬´ìŠ¹ë¶€ê°€ ì•„ë‹˜
         }
     }
-    return true; // ¸ğµç Ä­ÀÌ Ã¤¿öÁö°í ½ÂÀÚ°¡ ¾øÀ¸¸é ¹«½ÂºÎ
+    return true; // ëª¨ë“  ì¹¸ì´ ì±„ì›Œì§€ê³  ìŠ¹ìê°€ ì—†ìœ¼ë©´ ë¬´ìŠ¹ë¶€
 }
 
