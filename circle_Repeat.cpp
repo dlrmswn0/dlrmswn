@@ -1,7 +1,7 @@
 #include "Repeat.h"
 
-Repeat::Repeat(int n,int r):
-	Array(n+1,r),WNum(n),H(n),tictactoe(),YahtzeeGame(n)
+Repeat::Repeat(int n,int m):
+	Array(n+1,m),WNum(n),H(n),tictactoe(),YahtzeeGame(n)
 {
 
 }
