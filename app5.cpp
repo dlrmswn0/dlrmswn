@@ -10,9 +10,14 @@ int main() {
 	cout << "인원수입력:";
 	cin >> n;
 
-	Array array(n+1); // 0번째 배열은 사용x 
+	int m;
+	cout << "금액 입력:";
+	cin >> m;
+
+	Array array(n+1,m); // 0번째 배열은 사용x 
 	YahtzeeGame game(n);
-	Game game1(n);
+	Game game1(n); // 객체 생성
+
 	int r;
 	cout << endl << "야추 반복수 입력:";
 	cin >> r;
@@ -32,5 +37,8 @@ int main() {
 		array.Count(game1.getSlowestRun());
 	}
 	cout << "패자 배열 출력" << endl;
+
 	array.PrintArray(); //최종 배열 출력
+	array.Calculate(); //낼돈 계산
+	array.Nbbang();
 }
