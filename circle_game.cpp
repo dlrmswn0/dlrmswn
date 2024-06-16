@@ -70,10 +70,10 @@ void Game::play() {
             cout << "Enter the position of the changed number (row and column, 0-based index): ";
             cin >> guessRow >> guessCol;
 
-            if (guessRow < 0 || guessRow >= SIZE || guessCol < 0 || guessCol >= SIZE) {
+            if (guessRow < 0 || guessRow >= SIZE+1 || guessCol < 0 || guessCol >= SIZE+1) {
                 cout << "Invalid input. Please try again." << endl;
             }
-            else if (originalArray[guessRow][guessCol] != modifiedArray[guessRow][guessCol]) {
+            else if (originalArray[guessRow-1][guessCol-1] != modifiedArray[guessRow-1][guessCol-1]) {
                 cout << "Correct! The changed number is at (" << guessRow << ", " << guessCol << ")." << endl;
                 found = true;
             }

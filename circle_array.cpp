@@ -1,6 +1,7 @@
 #include "Array.h"
 
-Array::Array(int n) :n(n), loser(n) // loser ë°°ì—´ì€ ìƒì„±ìë¥¼ í†µí•´ nê°œì˜ ì¸ë±ìŠ¤ë¥¼ ê°€ì§€ë©° ëª¨ë‘ 0ìœ¼ë¡œ ì´ˆê¸°í™”ë¨.
+Array::Array(int n,int i) 
+:n(n), loser(n),pay(n),money(i) // loser, pay ¹è¿­Àº »ı¼ºÀÚ¸¦ ÅëÇØ n°³ÀÇ ÀÎµ¦½º¸¦ °¡Áö¸ç ¸ğµÎ 0À¸·Î ÃÊ±âÈ­µÊ.
 {
 
 }
@@ -8,7 +9,7 @@ Array::Array(int n) :n(n), loser(n) // loser ë°°ì—´ì€ ìƒì„±ìë¥¼ í†µí•´ nê°œì
 
 void Array::Count(int m)
 {
-	loser[m]++; // ì…ë ¥ë°›ì€ int í˜• ë³€ìˆ˜ më²ˆì§¸ loser ë°°ì—´ ì¸ë±ìŠ¤ë¥¼ 1 ë”í•¨ . íŒ¨ë°° ì¹´ìš´íŒ…
+	loser[m]++; // ÀÔ·Â¹ŞÀº int Çü º¯¼ö m¹øÂ° loser ¹è¿­ ÀÎµ¦½º¸¦ 1 ´õÇÔ . ÆĞ¹è Ä«¿îÆÃ
 } 
 
 void Array::PrintArray()
@@ -17,4 +18,30 @@ void Array::PrintArray()
 	{
 		cout << loser[i];
 	}
-} // loser ë°°ì—´ ì¶œë ¥
+} // loser ¹è¿­ Ãâ·Â
+
+void Array::Calculate()
+{
+	double total=0;
+	for (int i = 1; i < n; i++)
+	{
+		total += loser[i];
+	}
+	
+	for (int i = 1; i < n; i++)
+	{
+		pay[i] = (loser[i] / total) * money;
+	} //pay °è»ê
+
+	for (int i = 1; i < n; i++)
+	{
+		cout << endl << i << "¹øÂ° ÇÃ·¹ÀÌ¾î°¡ ³¾ ±İ¾×:" << pay[i] << "¿ø";
+	}//pay Ãâ·Â
+
+	
+}
+
+void Array::Nbbang()
+{
+	cout <<endl<< "n»§ ±İ¾×:" << money / n << "¿ø ÀÔ´Ï´Ù.";
+}
