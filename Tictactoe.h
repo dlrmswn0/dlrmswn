@@ -1,4 +1,3 @@
-// tictactoe.h
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
 
@@ -33,7 +32,8 @@ public:
     bool checkdraw();
 
     int getloses();
- 
+
+    void Ό³Έν();
 };
 
 #endif // TICTACTOE_H

@@ -1,5 +1,5 @@
-#ifndef NUM_H
-#define NUM_H
+#ifndef WNUM_H
+#define WNUM_H
 
 #include <iostream>
 #include <vector>
@@ -26,6 +26,7 @@ public:
 	WNum(int);
 	void play();
 	int getloser();
+	void explain();
 };
 
 #endif
